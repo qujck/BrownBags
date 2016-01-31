@@ -29,6 +29,15 @@ namespace IntegrationTests
            Employee Number:
                cannot be null
                must be 3 characters + 8 numbers
+
+           Dept & Employee Number:
+               if Dept = 'Finance' employee number starts with FIN
+               if Dept = 'Board' employee number starts with BRD
+               else employee number does not start with FIN or BRD
+
+           Deptg & Title:
+               if Dept = 'Ivory Tower' title is one of Architect, Senior Architect, Lead Architect
+               if Dept = 'BAU' title is one of Junior Programmer Analyst, Programmer Analyst, Senior Programmer Analyst, Lead Programmer Analyst
     */
 
     // Bag 4:
