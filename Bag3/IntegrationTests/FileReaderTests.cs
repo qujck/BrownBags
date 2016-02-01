@@ -9,10 +9,10 @@ namespace IntegrationTests
 {
     public class FileReaderTests
     {
-        [TestCase(0, "Name", "Peter")]
-        [TestCase(1, "Dept", "DMS")]
-        [TestCase(2, "EmployeeNumber", "12345")]
-        [TestCase(3, "Title", "Architect")]
+        [TestCase(0, "Name", "Paul")]
+        [TestCase(1, "Dept", "BRD")]
+        [TestCase(2, "EmployeeNumber", "BRD12345678")]
+        [TestCase(3, "Title", "CTO")]
         public void FileReader_GivenCsvFile_ReturnsFileDataForEachLine(
             int index, string field, string value)
         {
@@ -23,10 +23,10 @@ namespace IntegrationTests
             Assert.AreEqual(value, data[index].StringValue);
         }
 
-        [TestCase(0, "Name", "Peter")]
-        [TestCase(1, "Dept", "DMS")]
-        [TestCase(2, "EmployeeNumber", "12345")]
-        [TestCase(3, "Title", "Architect")]
+        [TestCase(0, "Name", "Paul")]
+        [TestCase(1, "Dept", "BRD")]
+        [TestCase(2, "EmployeeNumber", "BRD12345678")]
+        [TestCase(3, "Title", "CTO")]
         public void FileReader_GivenTabFile_ReturnsFileDataForEachLine(
             int index, string field, string value)
         {
@@ -37,10 +37,10 @@ namespace IntegrationTests
             Assert.AreEqual(value, data[index].StringValue);
         }
 
-        [TestCase(0, "Name", "Peter")]
-        [TestCase(1, "Dept", "DMS")]
-        [TestCase(2, "EmployeeNumber", "12345")]
-        [TestCase(3, "Title", "Architect")]
+        [TestCase(0, "Name", "Paul")]
+        [TestCase(1, "Dept", "BRD")]
+        [TestCase(2, "EmployeeNumber", "BRD12345678")]
+        [TestCase(3, "Title", "CTO")]
         public void FileReader_GivenXmlFile_ReturnsFileDataForEachLine(
             int index, string field, string value)
         {

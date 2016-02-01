@@ -36,7 +36,7 @@ namespace IntegrationTests
                else employee number does not start with FIN or BRD
 
            Dept & Title:
-               if Dept = 'Ivory Tower' title is one of Architect, Senior Architect, Lead Architect
+               if Dept = 'Ivory Tower' title is one of CTO, Senior CTO, Lead CTO
                if Dept = 'BAU' title is one of Junior Programmer Analyst, Programmer Analyst, Senior Programmer Analyst, Lead Programmer Analyst
                else title is none of the above
     */
