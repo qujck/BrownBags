@@ -42,10 +42,16 @@ namespace IntegrationTests
     */
 
     // Bag 4:
-    // Show a generic query abstraction
-    // refactor to parameter objects
+    // AOP
+    // Define a File Reader abstraction
+    // Define a Data Validation abstraction
+    // add logging
+    // And we have AOP!
+
+    // Bag 5:
+    // CQRS & Parameter Objects
+    // Show a generic query and command abstraction
     // add logging with a static class
-    // And then we have AOP :-)
     public sealed class FileReader
     {
         public List<FileData> Read(string filename, FileType fileType)
