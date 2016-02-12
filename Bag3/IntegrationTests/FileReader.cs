@@ -14,44 +14,32 @@ namespace IntegrationTests
        Talk about the benefits of tests in general, refactor the new code into Linq statements
 
        Validation:
-        
-           Name:
-               cannot contain numbers
-               cannot be null
-               > 1 character
-               < 256 characters
+            Name
+            •	cannot contain numbers
+            •	cannot be null
+            •	> 1 character
+            •	< 256 characters
 
-           Dept:
-               can be null
-               > 1 character
-               < 256 characters
+            Dept
+            •	can be null
+            •	> 1 character
+            •	< 256 characters
 
-           Employee Number:
-               cannot be null
-               must be 3 characters + 8 numbers
+            Employee Number
+            •	cannot be null
+            •	must be 3 characters + 8 numbers
 
-           Dept & Employee Number:
-               if Dept = 'Finance' employee number starts with FIN
-               if Dept = 'Board' employee number starts with BRD
-               else employee number does not start with FIN or BRD
+            Dept & Employee Number
+            •	if Dept == 'Finance' employee number starts with FIN
+            •	if Dept == 'Board' employee number starts with BRD
+            •	else employee number does not start with FIN or BRD
 
-           Dept & Title:
-               if Dept = 'Ivory Tower' title is one of CTO, Senior CTO, Lead CTO
-               if Dept = 'BAU' title is one of Junior Programmer Analyst, Programmer Analyst, Senior Programmer Analyst, Lead Programmer Analyst
-               else title is none of the above
+            Dept & Title
+            •	if Dept == 'Architecture' title is one of Architect, Senior Architect, Lead Architect
+            •	if Dept == 'Apps' title is one of Junior Programmer Analyst, Programmer Analyst, Senior Programmer Analyst, Lead Programmer Analyst
+            •	else title is none of the above
+
     */
-
-    // Bag 4:
-    // AOP
-    // Define a File Reader abstraction
-    // Define a Data Validation abstraction
-    // add logging
-    // And we have AOP!
-
-    // Bag 5:
-    // CQRS & Parameter Objects
-    // Show a generic query and command abstraction
-    // add logging with a static class
     public sealed class FileReader
     {
         public List<FileData> Read(string filename, FileType fileType)
