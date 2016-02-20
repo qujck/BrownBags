@@ -8,9 +8,9 @@ using System.Xml;
 namespace BrownBagLnch_1
 {
     // THIS PROGRAM USES C#6.0 FEATURES 
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             var reader = ReaderFactory.GetReader(args[0]);
 
@@ -120,7 +120,6 @@ namespace BrownBagLnch_1
             }
 
             Console.WriteLine("Done");
-            Console.ReadKey();
         }
     }
 

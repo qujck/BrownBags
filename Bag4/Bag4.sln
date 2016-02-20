@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Statics", "Statics\Statics.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Statics.Tests", "Statics.Tests\Statics.Tests.csproj", "{DC50BC2B-D3F6-40DA-928F-B7CC90414DE9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OldSkool.Tests", "OldSkool.Tests\OldSkool.Tests.csproj", "{F6710B0A-61B2-424D-B4A6-D3E233EA6067}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{DC50BC2B-D3F6-40DA-928F-B7CC90414DE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC50BC2B-D3F6-40DA-928F-B7CC90414DE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC50BC2B-D3F6-40DA-928F-B7CC90414DE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6710B0A-61B2-424D-B4A6-D3E233EA6067}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6710B0A-61B2-424D-B4A6-D3E233EA6067}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6710B0A-61B2-424D-B4A6-D3E233EA6067}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6710B0A-61B2-424D-B4A6-D3E233EA6067}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
