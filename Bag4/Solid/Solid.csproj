@@ -42,14 +42,28 @@
   <ItemGroup>
     <Compile Include="FileReaders\CsvReader.cs" />
     <Compile Include="FileReaders\DelimitedReader.cs" />
-    <Compile Include="FileReaders\IFileReader.cs" />
+    <Compile Include="ICrossFieldValidator.cs" />
+    <Compile Include="IFileReader.cs" />
     <Compile Include="FileReaders\TabularReader.cs" />
     <Compile Include="FileReaders\XmlReader.cs" />
     <Compile Include="Model\FileData.cs" />
     <Compile Include="Model\FileDataExtensions.cs" />
-    <Compile Include="Validators\IValidator.cs" />
+    <Compile Include="ISingleFieldValidator.cs" />
+    <Compile Include="Model\Constants.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validators\CrossField\ValidateAppsTitle.cs" />
+    <Compile Include="Validators\CrossField\ValidateArchitectTitle.cs" />
+    <Compile Include="Validators\CrossField\ValidateBoardEmployeeNumber.cs" />
+    <Compile Include="Validators\CrossField\ValidateFinanceEmployeeNumber.cs" />
+    <Compile Include="Validators\CrossField\ValidateNonArchitectAndNonAppsTitle.cs" />
+    <Compile Include="Validators\CrossField\ValidateNonFinanceNonBoardEmployeeNumber.cs" />
+    <Compile Include="Validators\SingleField\DoesNotContainANumber.cs" />
+    <Compile Include="Validators\SingleField\IsNotEmpty.cs" />
+    <Compile Include="Validators\SingleField\IsNotLongerThan256.cs" />
+    <Compile Include="Validators\SingleField\IsNotNull.cs" />
+    <Compile Include="Validators\SingleField\IsValidEmployeeNumber.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -9,15 +9,15 @@ namespace Solid.Model
     public static class FileDataExtensions
     {
         public static FileData Department(this IEnumerable<FileData> data) =>
-            data.Single(item => item.Fieldname == "Dept");
+            data.Single(item => item.Fieldname == Constants.Field.Dept);
 
         public static FileData Name(this IEnumerable<FileData> data) =>
-            data.Single(item => item.Fieldname == "Name");
+            data.Single(item => item.Fieldname == Constants.Field.Name);
 
         public static FileData EmployeeNumber(this IEnumerable<FileData> data) =>
-            data.Single(item => item.Fieldname == "EmployeeNumber");
+            data.Single(item => item.Fieldname == Constants.Field.EmployeeNumber);
 
         public static FileData Title(this IEnumerable<FileData> data) =>
-            data.Single(item => item.Fieldname == "Title");
+            data.Single(item => item.Fieldname == Constants.Field.Title);
     }
 }

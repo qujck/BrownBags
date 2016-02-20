@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Solid.Model;
 
-namespace Solid.Validators
+namespace Solid
 {
-    interface IValidator
+    public interface ICrossFieldValidator
     {
-        void Validate(string name, string value);
+        void Validate(IEnumerable<FileData> data);
     }
 }

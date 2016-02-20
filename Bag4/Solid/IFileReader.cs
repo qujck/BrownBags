@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Solid.Model;
 
-namespace Solid.FileReaders
+namespace Solid
 {
     public interface IFileReader
     {
