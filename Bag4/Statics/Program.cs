@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Statics
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             IEnumerable<FileData> data = Readers.ReadData(args[0]);
 
@@ -32,6 +32,8 @@ namespace Statics
                 .ValidateBoardEmployeeNumber()
                 .ValidateFinanceEmployeeNumber()
                 .ValidateNonFinanceNonBoardEmployeeNumber();
+
+            Console.WriteLine("Completed");
         }
     }
 }

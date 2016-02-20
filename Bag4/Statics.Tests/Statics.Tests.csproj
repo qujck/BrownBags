@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CrossFieldValidationTests.cs" />
+    <Compile Include="ProgramTests.cs" />
     <Compile Include="ReadersTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SingleFieldValidationTests.cs" />
