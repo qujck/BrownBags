@@ -19,21 +19,7 @@ namespace Statics.Tests.Unit
         }
 
         [Test]
-        public void Program_WithBasicCsvFile_Succeeds()
-        {
-            using (StringWriter sw = new StringWriter())
-            {
-                Console.SetOut(sw);
-
-                Program.Main(new[] { "data.csv" });
-
-                var output = sw.ToString().Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-                Assert.AreEqual("Done", output[0]);
-            }
-        }
-
-        [Test]
-        public void Program_WithBasicTabFile_Succeeds()
+        public void Program_WithTabFile_Succeeds()
         {
             using (StringWriter sw = new StringWriter())
             {
@@ -68,13 +54,13 @@ namespace Statics.Tests.Unit
         }
 
         [Test]
-        public void Program_WithBigCsvFile_Succeeds()
+        public void Program_WithCsvFile_Succeeds()
         {
             using (StringWriter sw = new StringWriter())
             {
                 Console.SetOut(sw);
 
-                Program.Main(new[] { "BigData.csv" });
+                Program.Main(new[] { "data.csv" });
 
                 var output = sw.ToString().Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
 
