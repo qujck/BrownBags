@@ -46,6 +46,7 @@
     <Compile Include="FileReaders\TabularReader.cs" />
     <Compile Include="FileReaders\XmlReader.cs" />
     <Compile Include="Model\FileData.cs" />
+    <Compile Include="Model\FileDataExtensions.cs" />
     <Compile Include="Validators\IValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
