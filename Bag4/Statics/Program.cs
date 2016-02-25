@@ -12,28 +12,42 @@ namespace Statics
         {
             IEnumerable<FileData> data = Readers.ReadData(args[0]);
 
-            data.Name()
-                .DoesNotContainANumber()
+            ValidateName(data.Name());
+            ValidateDepartment(data.Department());
+            ValidateEmployeeNumber(data.EmployeeNumber());
+            ValidateData(data);
+
+            Console.WriteLine("Completed");
+        }
+
+        private static void ValidateName(FileData name)
+        {
+            name.DoesNotContainANumber()
                 .IsNotNull()
                 .IsNotEmpty()
                 .IsNoLongerThan256();
+        }
 
-            data.Department()
-                .IsNotEmpty()
+        private static void ValidateDepartment(FileData department)
+        {
+            department.IsNotEmpty()
                 .IsNoLongerThan256();
+        }
 
-            data.EmployeeNumber()
-                .IsNotNull()
+        private static void ValidateEmployeeNumber(FileData employeeNumber)
+        {
+            employeeNumber.IsNotNull()
                 .IsValidEmployeeNumber();
+        }
 
+        private static void ValidateData(IEnumerable<FileData> data)
+        {
             data.ValidateAppsTitle()
                 .ValidateArchitectTitle()
                 .ValidateNonArchitectAndNonAppsTitle()
                 .ValidateBoardEmployeeNumber()
                 .ValidateFinanceEmployeeNumber()
                 .ValidateNonFinanceNonBoardEmployeeNumber();
-
-            Console.WriteLine("Completed");
         }
     }
 }
