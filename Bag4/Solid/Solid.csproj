@@ -55,6 +55,8 @@
     <Compile Include="Model\Constants.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceProvider.cs" />
+    <Compile Include="ServiceProviderExtensions.cs" />
     <Compile Include="Validators\CrossField\ValidateAppsTitle.cs" />
     <Compile Include="Validators\CrossField\ValidateArchitectTitle.cs" />
     <Compile Include="Validators\CrossField\ValidateBoardEmployeeNumber.cs" />

@@ -28,23 +28,24 @@ namespace Solid
 
         static Program()
         {
+            IServiceProvider serviceProvider = new ServiceProvider();
             readers = new IFileReader[]
             {
-                new CsvReader(),
-                new TabularReader(),
-                new XmlReader()
+                serviceProvider.GetService<CsvReader>(),
+                serviceProvider.GetService<TabularReader>(),
+                serviceProvider.GetService<XmlReader>()
             };
-            doesNotContainANumber = new DoesNotContainANumber();
-            isNotEmpty = new IsNotEmpty();
-            isNotLongerThan256 = new IsNotLongerThan256();
-            isNotNull = new IsNotNull();
-            isValidEmployeeNumber = new IsValidEmployeeNumber();
-            validateAppsTitle = new ValidateAppsTitle();
-            validateArchitectTitle = new ValidateArchitectTitle();
-            validateBoardEmployeeNumber = new ValidateBoardEmployeeNumber();
-            validateFinanceEmployeeNumber = new ValidateFinanceEmployeeNumber();
-            validateNonArchitectAndNonAppsTitle = new ValidateNonArchitectAndNonAppsTitle();
-            validateNonFinanceNonBoardEmployeeNumber = new ValidateNonFinanceNonBoardEmployeeNumber();
+            doesNotContainANumber = serviceProvider.GetService<DoesNotContainANumber>();
+            isNotEmpty = serviceProvider.GetService<IsNotEmpty>();
+            isNotLongerThan256 = serviceProvider.GetService<IsNotLongerThan256>();
+            isNotNull = serviceProvider.GetService<IsNotNull>();
+            isValidEmployeeNumber = serviceProvider.GetService<IsValidEmployeeNumber>();
+            validateAppsTitle = serviceProvider.GetService<ValidateAppsTitle>();
+            validateArchitectTitle = serviceProvider.GetService<ValidateArchitectTitle>();
+            validateBoardEmployeeNumber = serviceProvider.GetService<ValidateBoardEmployeeNumber>();
+            validateFinanceEmployeeNumber = serviceProvider.GetService<ValidateFinanceEmployeeNumber>();
+            validateNonArchitectAndNonAppsTitle = serviceProvider.GetService<ValidateNonArchitectAndNonAppsTitle>();
+            validateNonFinanceNonBoardEmployeeNumber = serviceProvider.GetService<ValidateNonFinanceNonBoardEmployeeNumber>();
         }
         #endregion
 
