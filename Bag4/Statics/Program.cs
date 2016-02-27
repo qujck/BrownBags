@@ -10,7 +10,7 @@ namespace Statics
     {
         public static void Main(string[] args)
         {
-            IEnumerable<FileData> data = Readers.ReadData(args[0]);
+            var data = Readers.ReadData(args[0]);
 
             ValidateName(data.Name());
             ValidateDepartment(data.Department());
