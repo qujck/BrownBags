@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 using BrownBagLnch_1;
 
-namespace Statics.Tests.Unit
+namespace OldSkool.Tests.Unit
 {
     public class ProgramTests
     {
@@ -25,7 +25,7 @@ namespace Statics.Tests.Unit
             {
                 Console.SetOut(sw);
 
-                Program.Main(new[] { "data.tab" });
+                Program.Main(new[] { ObjectMother.TestFilePath("data.tab") });
 
                 var output = sw.ToString().Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
                 Assert.AreEqual("Done", output[0]);
@@ -39,7 +39,7 @@ namespace Statics.Tests.Unit
             {
                 Console.SetOut(sw);
 
-                Program.Main(new[] { "data.xml" });
+                Program.Main(new[] { ObjectMother.TestFilePath("data.xml") });
 
                 var output = sw.ToString().Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
 
@@ -60,7 +60,7 @@ namespace Statics.Tests.Unit
             {
                 Console.SetOut(sw);
 
-                Program.Main(new[] { "data.csv" });
+                Program.Main(new[] { ObjectMother.TestFilePath("data.csv") });
 
                 var output = sw.ToString().Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
 

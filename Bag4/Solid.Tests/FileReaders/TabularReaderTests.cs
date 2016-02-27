@@ -34,7 +34,7 @@ namespace Solid.Tests.Unit.FileReaders
         {
             var reader = new TabularReader();
 
-            var result = reader.Read("data.tab");
+            var result = reader.Read(ObjectMother.TestFilePath("data.tab"));
 
             Assert.AreEqual("Paul", result.Name().StringValue);
             Assert.AreEqual("Board", result.Department().StringValue);

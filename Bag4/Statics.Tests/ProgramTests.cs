@@ -26,7 +26,7 @@ namespace Statics.Tests.Unit
             {
                 Console.SetOut(sw);
 
-                Program.Main(new[] { filename });
+                Program.Main(new[] { ObjectMother.TestFilePath(filename) });
 
                 Assert.AreEqual("Completed\r\n", sw.ToString());
             }

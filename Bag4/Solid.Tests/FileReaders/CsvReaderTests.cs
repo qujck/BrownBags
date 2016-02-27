@@ -34,7 +34,7 @@ namespace Solid.Tests.Unit.FileReaders
         {
             var reader = new CsvReader();
 
-            var result = reader.Read("data.csv");
+            var result = reader.Read(ObjectMother.TestFilePath("data.csv"));
 
             Assert.AreEqual("Paul", result.Name().StringValue);
             Assert.AreEqual("Board", result.Department().StringValue);

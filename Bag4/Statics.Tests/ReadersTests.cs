@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,7 @@ namespace Statics.Tests.Unit
         [TestCase("data.tab")]
         public void Reader_Always_ReadsData(string filename)
         {
-            var result = Readers.ReadData(filename);
+            var result = Readers.ReadData(ObjectMother.TestFilePath(filename));
             Assert.AreEqual("Paul", result.Name().StringValue);
             Assert.AreEqual("Board", result.Department().StringValue);
             Assert.AreEqual("BRD12345678", result.EmployeeNumber().StringValue);

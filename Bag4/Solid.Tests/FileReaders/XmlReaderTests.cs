@@ -34,7 +34,7 @@ namespace Solid.Tests.Unit.FileReaders
         {
             var reader = new XmlReader();
 
-            var result = reader.Read("data.xml");
+            var result = reader.Read(ObjectMother.TestFilePath("data.xml"));
 
             Assert.AreEqual("Paul", result.Name().StringValue);
             Assert.AreEqual("Board", result.Department().StringValue);
