@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -10,6 +11,8 @@ namespace BrownBagLnch_1
     // THIS PROGRAM USES C#6.0 FEATURES 
     public class Program
     {
+        public static IEnumerable<FileData> Data { get; private set; }
+
         public static void Main(string[] args)
         {
             var reader = ReaderFactory.GetReader(args[0]);
@@ -33,28 +36,38 @@ namespace BrownBagLnch_1
                     employee.Errors.Add($"Error Name value contains a number {ee[Field.Name]}");
                 }
 
+                Logger.Current.Log("Test: Error Name value is null");
                 if (ee[Field.Name] == null)
                 {
+                    Logger.Current.Log("Failure: Error Name value is null");
                     employee.Errors.Add($"Error Name value is null");
                 }
 
+                Logger.Current.Log("Test: Error Name value is <= 1 character long");
                 if (ee[Field.Name].Length <= 1)
                 {
+                    Logger.Current.Log("Failure: Error Name value is <= 1 character long");
                     employee.Errors.Add($"Error Name value is <= 1 character long");
                 }
 
+                Logger.Current.Log("Test: Error Name value is > 256 character long");
                 if (ee[Field.Name].Length > 256)
                 {
+                    Logger.Current.Log("Failure: Error Name value is > 256 character long");
                     employee.Errors.Add($"Error Name value is > 256 character long");
                 }
 
+                Logger.Current.Log("Test: Error Dept value is <= 1 character long");
                 if (ee[Field.Dept].Length <= 1)
                 {
+                    Logger.Current.Log("Failure: Error Dept value is <= 1 character long");
                     employee.Errors.Add($"Error Dept value is <= 1 character long");
                 }
 
+                Logger.Current.Log("Test: Error Dept value is > 256 character long");
                 if (ee[Field.Dept].Length > 256)
                 {
+                    Logger.Current.Log("Failure: Error Dept value is > 256 character long");
                     employee.Errors.Add($"Error Dept value is > 256 character long");
                 }
 
@@ -118,6 +131,8 @@ namespace BrownBagLnch_1
                     }
                 }
             }
+
+            Data = employees.EmployeesData[0].EmployeeData;
 
             Console.WriteLine("Done");
         }
@@ -273,6 +288,15 @@ namespace BrownBagLnch_1
                     return new XMLReader(filename);
             }
             throw new ArgumentException("Expecting one of csv tab xml");
+        }
+    }
+    public class Logger
+    {
+        public static Logger Current { get; } = new Logger();
+
+        public void Log(string message)
+        {
+            Debug.WriteLine(message);
         }
     }
 }
