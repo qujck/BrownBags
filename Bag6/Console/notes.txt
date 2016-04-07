@@ -1,0 +1,57 @@
+﻿// Fibonacci
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Bag6.Fibonacci;
+
+namespace TestConsole
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            IService fs = new Service();
+
+            var result = fs.Compute(1, 50000);
+
+            Console.WriteLine();
+            Console.WriteLine("Press any key to exit");
+
+            Console.ReadLine();
+        }
+    }
+}
+
+
+
+// Sorting
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Bag6.Sorting;
+
+namespace TestConsole
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string[] values = new[] { "january", "february", "march", "april" };
+
+            IStringSorter fs = new DefaultSorter();
+
+            var result = fs.Sort(values).ToList();
+
+            Console.WriteLine();
+            Console.WriteLine("Press any key to exit");
+
+            Console.ReadLine();
+        }
+    }
+}
