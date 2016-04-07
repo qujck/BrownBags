@@ -8,7 +8,7 @@ namespace CQRS
 {
     public interface IQuery<TResult> { }
 
-    interface IQueryHandler<TQuery, TResult> where TQuery : IQuery<TResult>
+    public interface IQueryHandler<TQuery, TResult> where TQuery : IQuery<TResult>
     {
         TResult Handle(TQuery query);
     }
