@@ -13,7 +13,7 @@ namespace TestConsole
         {
             IQueryHandler<FibonnaciQuery, IEnumerable<double>> handler;
             handler = new FibonnaciQueryHandler();
-            handler = new EnumerableQueryHandlerLoggingDecorator<FibonnaciQuery, IEnumerable<double>>(handler);
+            handler = new QueryHandlerLoggingDecorator<FibonnaciQuery, IEnumerable<double>>(handler);
             var query = new FibonnaciQuery { Min = 1, Max = 1250 };
 
             var result = handler.Handle(query).ToList();

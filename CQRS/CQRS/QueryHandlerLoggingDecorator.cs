@@ -3,16 +3,17 @@ using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace CQRS
 {
-    public sealed class EnumerableQueryHandlerLoggingDecorator<TQuery, TResult> : IQueryHandler<TQuery, TResult> 
+    public sealed class QueryHandlerLoggingDecorator<TQuery, TResult> : IQueryHandler<TQuery, TResult> 
         where TQuery : IQuery<TResult>
         where TResult : IEnumerable
     {
         private readonly IQueryHandler<TQuery, TResult> decorated;
 
-        public EnumerableQueryHandlerLoggingDecorator(
+        public QueryHandlerLoggingDecorator(
             IQueryHandler<TQuery, TResult> decorated)
         {
             this.decorated = decorated;
@@ -22,10 +23,7 @@ namespace CQRS
         {
             var result = this.decorated.Handle(query);
 
-            foreach (var item in result)
-            {
-                Console.WriteLine(item);
-            }
+            Console.WriteLine(JsonConvert.SerializeObject(result));
 
             return result;
         }
