@@ -9,7 +9,12 @@ namespace CQRS.Queries
 {
     public class ReadBankAccount : IQuery<BankAccount>
     {
-        public long Id { get; set; }
+        public ReadBankAccount(int id)
+        {
+            this.Id = id;
+        }
+
+        public long Id { get; private set; }
     }
 
     public sealed class ReadBankAccountHandler : IQueryHandler<ReadBankAccount, BankAccount>

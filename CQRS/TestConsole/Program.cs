@@ -14,8 +14,8 @@ namespace TestConsole
             var addressReader = new ReadAddressHandler();
             var accountReader = new ReadBankAccountHandler();
 
-            addressReader.Handle(new ReadAddress { Id = 1 });
-            accountReader.Handle(new ReadBankAccount { Id = 1 });
+            addressReader.Handle(new ReadAddress(1));
+            accountReader.Handle(new ReadBankAccount(1));
 
             Console.WriteLine();
             Console.WriteLine("Press any key to exit");

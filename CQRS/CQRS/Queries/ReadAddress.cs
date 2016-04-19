@@ -9,7 +9,12 @@ namespace CQRS.Queries
 {
     public class ReadAddress : IQuery<Address>
     {
-        public long Id { get; set; }
+        public ReadAddress(int id)
+        {
+            this.Id = id;
+        }
+
+        public long Id { get; private set; }
     }
 
     public sealed class ReadAddressHandler : IQueryHandler<ReadAddress, Address>
