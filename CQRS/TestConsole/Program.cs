@@ -11,12 +11,11 @@ namespace TestConsole
     {
         static void Main(string[] args)
         {
-            IQueryHandler<FibonnaciQuery, IEnumerable<double>> handler;
-            handler = new FibonnaciQueryHandler();
-            handler = new QueryHandlerLoggingDecorator<FibonnaciQuery, IEnumerable<double>>(handler);
-            var query = new FibonnaciQuery { Min = 1, Max = 1250 };
+            var addressReader = new ReadAddressHandler().Secured();
+            var accountReader = new ReadBankAccountHandler().Secured();
 
-            var result = handler.Handle(query).ToList();
+            addressReader.Handle(new ReadAddress { Id = 1 });
+            accountReader.Handle(new ReadBankAccount { Id = 1 });
 
             Console.WriteLine();
             Console.WriteLine("Press any key to exit");

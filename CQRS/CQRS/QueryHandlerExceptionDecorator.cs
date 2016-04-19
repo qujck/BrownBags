@@ -7,12 +7,12 @@ using Newtonsoft.Json;
 
 namespace CQRS
 {
-    public sealed class QueryHandlerLoggingDecorator<TQuery, TResult> : IQueryHandler<TQuery, TResult> 
+    public sealed class QueryHandlerExceptionDecorator<TQuery, TResult> : IQueryHandler<TQuery, TResult>
         where TQuery : IQuery<TResult>
     {
         private readonly IQueryHandler<TQuery, TResult> decorated;
 
-        public QueryHandlerLoggingDecorator(
+        public QueryHandlerExceptionDecorator(
             IQueryHandler<TQuery, TResult> decorated)
         {
             this.decorated = decorated;
@@ -20,11 +20,15 @@ namespace CQRS
 
         public TResult Handle(TQuery query)
         {
-            var result = this.decorated.Handle(query);
-
-            Console.WriteLine(JsonConvert.SerializeObject(result));
-
-            return result;
+            try
+            {
+                return this.decorated.Handle(query);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(JsonConvert.SerializeObject(e));
+                throw;
+            }
         }
     }
 }
