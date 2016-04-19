@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CQRS.Model;
 
-namespace CQRS
+namespace CQRS.Queries
 {
     public class ReadBankAccount : IQuery<BankAccount>
     {

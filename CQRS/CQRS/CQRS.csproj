@@ -44,20 +44,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\CreatePartyHandler.cs" />
+    <Compile Include="Commands\OnePartyService.cs" />
+    <Compile Include="Commands\SeparatedPartyServices.cs" />
+    <Compile Include="ICommandHandler.cs" />
     <Compile Include="Model\Address.cs" />
     <Compile Include="Model\BankAccount.cs" />
-    <Compile Include="QueryHandlerExceptionDecorator.cs" />
-    <Compile Include="QueryHandlerLoggingDecorator.cs" />
+    <Compile Include="Queries\QueryHandlerExceptionDecorator.cs" />
+    <Compile Include="Queries\QueryHandlerLoggingDecorator.cs" />
     <Compile Include="IQueryHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReadAddress.cs" />
-    <Compile Include="ReadBankAccount.cs" />
+    <Compile Include="Queries\ReadAddress.cs" />
+    <Compile Include="Queries\ReadBankAccount.cs" />
     <Compile Include="RegistrationExtensions.cs" />
-    <Compile Include="SecureQueryDecorator.cs" />
+    <Compile Include="Queries\SecureQueryDecorator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

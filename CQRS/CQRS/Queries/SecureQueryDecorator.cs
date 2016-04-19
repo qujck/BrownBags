@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CQRS
+namespace CQRS.Queries
 {
     public sealed class SecureQueryDecorator<TQuery, TResult> : IQueryHandler<TQuery, TResult>
         where TQuery : IQuery<TResult>
