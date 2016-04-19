@@ -16,6 +16,11 @@ namespace CQRS
     {
         public Address Handle(ReadAddress query)
         {
+            if (query.Id != 1)
+            {
+                throw new KeyNotFoundException();
+            }
+
             return new Address
             {
                 Line1 = "Line 1",

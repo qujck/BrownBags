@@ -16,6 +16,11 @@ namespace CQRS
     {
         public BankAccount Handle(ReadBankAccount query)
         {
+            if (query.Id != 1)
+            {
+                throw new KeyNotFoundException();
+            }
+
             return new BankAccount
             {
                 SortCode = "123456",

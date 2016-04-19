@@ -11,8 +11,8 @@ namespace TestConsole
     {
         static void Main(string[] args)
         {
-            var addressReader = new ReadAddressHandler().Secured();
-            var accountReader = new ReadBankAccountHandler().Secured();
+            var addressReader = new ReadAddressHandler();
+            var accountReader = new ReadBankAccountHandler();
 
             addressReader.Handle(new ReadAddress { Id = 1 });
             accountReader.Handle(new ReadBankAccount { Id = 1 });
